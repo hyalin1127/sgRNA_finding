@@ -88,3 +88,6 @@ Optional arguments:
 ```
 sgRNA_finding.py -f demo_hg38_refseq_CDS.txt -v hg38 -l 19 -b /path/of/2bit/file/ -n SpCas9
 ```
+
+### Contact ###
+Chen-Hao Chen (hyalin1127@gmail.com)
