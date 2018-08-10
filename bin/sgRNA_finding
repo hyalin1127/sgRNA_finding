@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+import sys
+import argparse
+import logging
+
+from sgRNA_finding.argParser import *
+from sgRNA_finding.CRISPR_sgRNA_finding_main import *
+
+def main():
+    initial_args=prepare_optparser()
+    opts=postargs(initial_args)
+    g = sgRNA(opts)
+    g.data_reformat()
+    g.multitask("bed_format_trial");Info("Finished bed file construction!")
+    g.multitask("twobitreader_trial");Info("Finished twobitreader!")
+    g.multitask("sequence_reformat_trial");Info("Finished sequence reformat!")
+    g.multitask("bp_finding");Info("Finished sgRNAs finding!")
+    g.file_merge_and_remove_duplicates();Info("Files merged!")
+    g.finalize();Info("Finished! Congratulations! :))))")
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.stderr.write("User interrupt me! ;-) Bye!\n")
+        sys.exit(0)
