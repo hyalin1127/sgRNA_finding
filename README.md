@@ -19,8 +19,8 @@ To use python3, the 'long' in __init__.py of twobitreader needs to be replaced w
 
 * genomic region in bed file
 ```
-C1orf141	chr1	-	67093579	67093604
-C1orf141	chr1	-	67096251	67096321
+chr1	67093579	67093604	C1orf141
+chr1	67096251	67096321	C1orf141
 ```
 
 
